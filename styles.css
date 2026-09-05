@@ -43,7 +43,7 @@ nav a { text-decoration: none; font-size: .9rem; font-weight: 700; }
 .button.primary { color: var(--white); background: var(--navy); }
 .hero-visual { position: relative; display: flex; justify-content: center; }
 .portrait-frame { position: relative; width: min(100%, 350px); padding: 2rem; border-radius: 180px 180px 20px 20px; background: var(--mint); box-shadow: 30px 30px 0 var(--cream); overflow: hidden; }
-.portrait-frame img { display: block; width: 150px; height: 200px; object-fit: cover; margin: 2.5rem auto 1.5rem; border: 8px solid rgba(255,255,255,.85); box-shadow: 0 20px 45px rgba(11,31,51,.2); }
+.portrait-frame img { display: block; width: 210px; height: 220px; object-fit: cover; object-position: center top; margin: 2.5rem auto 1.5rem; border: 8px solid rgba(255,255,255,.85); box-shadow: 0 20px 45px rgba(11,31,51,.2); }
 .portrait-caption { position: relative; display: flex; flex-direction: column; align-items: center; padding: 1rem; color: var(--navy); }
 .portrait-caption strong { font-family: Georgia, "Noto Serif KR", serif; font-size: 2rem; }
 .portrait-caption span { font-size: .82rem; font-weight: 700; }
@@ -120,9 +120,13 @@ nav a { text-decoration: none; font-size: .9rem; font-weight: 700; }
 .curriculum-timeline strong { margin-bottom: .3rem; }
 .curriculum-timeline span { color: rgba(255,255,255,.6); font-size: .86rem; }
 .curriculum-note { grid-column: 2; margin: -2rem 0 0; color: var(--mint); font-size: .8rem; }
-.profile-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 7rem; }
-.big-number { margin: 0; color: var(--mint); font-family: Georgia, serif; font-size: 10rem; line-height: .85; }
-.profile-summary > p:nth-child(2) { font-size: 1.2rem; font-weight: 800; }
+.track-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.22); border-bottom: 1px solid rgba(255,255,255,.22); }
+.track-card { padding: 2.2rem 1.7rem; border-right: 1px solid rgba(255,255,255,.22); }
+.track-card:last-child { border-right: 0; }
+.track-label { margin: 0 0 2rem; color: var(--mint); font-size: .72rem; font-weight: 900; letter-spacing: .15em; }
+.track-card h3 { min-height: 3.5rem; margin: 0 0 1.5rem; font-family: Georgia, "Noto Serif KR", serif; font-size: 1.35rem; line-height: 1.35; }
+.track-card ul { margin: 1.5rem 0 0; padding: 0; list-style: none; }
+.track-card li { padding: .75rem 0; color: rgba(255,255,255,.7); border-top: 1px solid rgba(255,255,255,.14); font-size: .9rem; }
 .broadcasters { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
 .broadcasters span { padding: .35rem .7rem; border: 1px solid rgba(255,255,255,.24); border-radius: 99px; font-size: .75rem; }
 .profile-details dl { margin: 0; }
@@ -175,12 +179,15 @@ footer a { text-decoration: none; font-weight: 800; }
   .method-steps li:nth-child(2) { border-right: 0; }
   .method-steps li:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.22); }
   .case-grid { grid-template-columns: 1fr; }
-  .program-layout, .profile-grid { grid-template-columns: 1fr; }
+  .program-layout { grid-template-columns: 1fr; }
   .curriculum { grid-template-columns: 1fr; gap: 2rem; }
   .curriculum-note { grid-column: auto; margin: 0; }
   .program-tabs { display: grid; grid-template-columns: 1fr 1fr; border-right: 0; border-bottom: 1px solid var(--line); }
   .program-tabs button:nth-child(odd) { border-right: 1px solid var(--line); }
-  .profile-grid { gap: 3rem; }
+  .track-grid { grid-template-columns: 1fr; }
+  .track-card { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.22); }
+  .track-card:last-child { border-bottom: 0; }
+  .track-card h3 { min-height: auto; }
 }
 @media (max-width: 540px) {
   body { word-break: normal; }
@@ -192,7 +199,6 @@ footer a { text-decoration: none; font-weight: 800; }
   .program-tabs { grid-template-columns: 1fr; }
   .program-tabs button:nth-child(odd) { border-right: 0; }
   .profile-details dl div { grid-template-columns: 1fr; gap: .3rem; }
-  .big-number { font-size: 8rem; }
   .before-after { grid-template-columns: 1fr; }
   .compare-column { min-height: auto; }
   .compare-arrow { justify-self: center; transform: rotate(90deg); }
